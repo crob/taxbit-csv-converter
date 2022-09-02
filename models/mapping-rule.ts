@@ -1,0 +1,1 @@
+export type MappingRule = {[key:string]: string | ((row: any) => any)};
