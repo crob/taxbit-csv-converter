@@ -5,3 +5,6 @@ export * from './kraken_margin_mapper';
 export * from './bybit_pro_loss_mapper';
 export * from './kraken_eth_staking_mapper';
 export * from './ada_staking_mapper';
+export * from './bybit_to_taxbit_mapper';
+export * from './usd-mapper';
+export * from './fuck_tax_bit_mapper';

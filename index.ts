@@ -47,6 +47,13 @@ const main = async () => {
                 return filter;
             });
         }
+        // if (file_name_prefix === 'bybit_to_taxbit') {
+        //     rows = rows.filter(row => {
+        //         const filter = row.Type === 'Realized P&L'
+                
+        //         return filter;
+        //     });
+        // }
         let converted_rows = rows.map(convertMap(getMapper(file_name_prefix)));
 
         let sum = 0;
@@ -81,6 +88,23 @@ const main = async () => {
             bybit_total = bybit_income + bybit_expense;
             console.log("bybit total: ", bybit_total, bybit_income, bybit_expense)
         }
+
+        if (file_name_prefix === 'bybit_to_taxbit') {
+            
+            // let sum = converted_rows.map(row => Number(row[TaxBitHeaders.Sent_Quantity])).reduce((prev, curr) => {
+            //     // debugger
+            //     if (curr > 0) {
+            //         bybit_income += curr
+            //     } else {
+            //         bybit_expense += curr;
+            //     }
+            //     return prev += curr
+            // }, 0)
+            // bybit_total = bybit_income + bybit_expense;
+            // console.log("bybit total: ", bybit_total, bybit_income, bybit_expense)
+        }
+
+        
 
         if (file_name_prefix === 'kraken_eth_staking') {
             let eth_staking_total = 0

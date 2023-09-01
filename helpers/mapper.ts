@@ -1,8 +1,10 @@
-import { adalite_mapping, ada_staking_mapper, bybit_pro_loss_mapping, bybit_spot_mapping, coinbase_mapping, kraken_eth_staking_mapper, kraken_margin_mapping } from "../mappers";
+import { adalite_mapping, ada_staking_mapper, bybit_pro_loss_mapping, bybit_spot_mapping, bybit_to_taxbit, coinbase_mapping, fuck_tax_bit_mapper, kraken_eth_staking_mapper, kraken_margin_mapping, usd_mapping } from "../mappers";
 import { MappingRule } from "../models";
 
 export const getMapper = (mappingName): MappingRule => {
     switch(mappingName) {
+        case 'bybit_to_taxbit':
+            return bybit_to_taxbit;
         case 'adalite':
             return adalite_mapping;
         case 'coinbase_usdc':
@@ -17,6 +19,10 @@ export const getMapper = (mappingName): MappingRule => {
             return kraken_eth_staking_mapper;
         case 'ada_staking':
             return ada_staking_mapper;
+        case 'usd':
+            return usd_mapping;
+        case 'fuck_taxbit':
+            return fuck_tax_bit_mapper;
         default:
             throw new Error(`no mapping for for ${mappingName}`);
     }
